@@ -1,9 +1,8 @@
 <?php
 namespace App\Controllers;
 
-
-use App\Lib\InputFilter;
 use App\Lib\Helper;
+use App\Lib\InputFilter;
 use App\Models\DoctorModel;
 use App\Models\SubjectModel;
 class SubjectController extends AbstractController
@@ -29,11 +28,30 @@ class SubjectController extends AbstractController
 
             if ($subject->save())
             {
-                var_dump("hello");
 //                $_SESSION['message'] = "employees is saved to database";
                 $this->redirect('/subject');
             }
         }
+    }
+    public function editAction()
+    {
+        $id = $this->filterInt($this->_params[0]);
+        $subject = SubjectModel::getByPK($id);
+        $this->_data['subject'] = $subject;
+        $this->_data['doctors'] = DoctorModel::getAll();
+        $this->_view();
+        if (isset($_POST['submit']))
+        {
+            $subject->sub_name = $this->filterString($_POST['name']);
+            $subject->doctor_id = $_POST['doctor_id'];
+
+            if ($subject->save())
+            {
+//                $_SESSION['message'] = "employees is saved to database";
+                $this->redirect('/subject');
+            }
+        }
+
     }
     public function deleteAction()
     {

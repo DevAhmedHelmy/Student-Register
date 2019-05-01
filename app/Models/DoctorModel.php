@@ -15,6 +15,7 @@ class DoctorModel extends AbstractModel
     public $register_time;
     protected static $tableName = 'doctors';
     protected static $tableSchema = array(
+        'id'            => self::DATA_TYPE_INT,
         'name'      => self::DATA_TYPE_STR,
         'email'      => self::DATA_TYPE_STR,
         'password'      => self::DATA_TYPE_STR,

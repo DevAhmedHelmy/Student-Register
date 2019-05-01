@@ -13,6 +13,7 @@ class StudentModel extends AbstractModel
     public $register_time;
     protected static $tableName = 'students';
     protected static $tableSchema = array(
+        'id'         => self::DATA_TYPE_INT,
         'name'      => self::DATA_TYPE_STR,
         'email'      => self::DATA_TYPE_STR,
         'password'      => self::DATA_TYPE_STR,
@@ -22,15 +23,12 @@ class StudentModel extends AbstractModel
         'register_time'      => self::DATA_TYPE_STR
     );
     protected static $primaryKey = 'id';
-
     public function __get($prop)
     {
         return $this->$prop;
     }
-
     public function getTableName()
     {
         return self::$tableName;
     }
-
 }

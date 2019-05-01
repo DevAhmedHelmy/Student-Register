@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            Dashboard <small>Students</small>
+            Dashboard <small>Outlays</small>
         </h1>
         <ol class="breadcrumb">
             <li>
                 <i class="fa fa-dashboard"></i> Dashboard
             </li>
             <li class="active">
-                <i class="fa fa-graduation-cap"></i> Outlay
+                <i class="fa fa-money"></i> Outlay
             </li>
         </ol>
     </div>
@@ -36,8 +36,8 @@
                             <td><?=$value->outlay?></td>
 
                             <td>
-                                <a href="http://www.students.com/student/edit/<?=$value->id?>"><i class="fa fa-edit"></i></a>
-                                <a href="http://www.students.com/student/delete/<?=$value->id?>" onclick="if(!confirm('Do you want delete this employee')) return false;">
+                                <a href="http://www.students.com/outlay/edit/<?=$value->outlay_id?>"><i class="fa fa-edit"></i></a>
+                                <a href="http://www.students.com/outlay/delete/<?=$value->outlay_id?>" onclick="if(!confirm('Do you want delete this employee')) return false;">
                                     <i class="fa fa-trash"></i></a>
                             </td>
                         </tr>

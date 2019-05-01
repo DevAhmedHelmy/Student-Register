@@ -1,4 +1,4 @@
-<!-- Navigation -->
+<?php ob_start();?>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -127,10 +127,14 @@
                 <a href="/subject"><i class="fa fa-file"></i> Subjects</a>
             </li>
             <li>
+                <a href="/lecture"><i class="fa fa-book"></i> Lectures</a>
+            </li>
+            <li>
                 <a href="/outlay"><i class="fa fa-money"></i> Outlay</a>
             </li>
 
-           
+
+
 
         </ul>
     </div>

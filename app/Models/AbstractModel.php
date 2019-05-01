@@ -43,9 +43,14 @@ class AbstractModel
         }
         return false;
     }
+
+    /**
+     * @return mixed
+     */
     private function update()
     {
-        $sql = 'UPDATE ' . static::$tableName . ' SET ' . $this->buildNameParametersSQL() . ' WHERE ' . static::$primaryKey . ' = ' . $this->{static::$primaryKey};
+        $sql = 'UPDATE ' . static::$tableName . ' SET ' . $this->buildNameParametersSQL() . '  WHERE ' . static::$primaryKey . ' = ' . $this->{static::$primaryKey};
+
         $stmt = DatabaseHandler::factory()->prepare($sql);
         $this->prepareValues($stmt);
         return $stmt->execute();
@@ -53,6 +58,7 @@ class AbstractModel
     public function save($primaryKeyCheck = true)
     {
         if(false === $primaryKeyCheck) {
+
             return $this->create();
         }
         return $this->{static::$primaryKey} === null ? $this->create() : $this->update();
@@ -93,6 +99,7 @@ class AbstractModel
         };
         return false;
     }
+
     public static function getByPK($pk)
     {
         $sql = 'SELECT * FROM ' . static::$tableName . '  WHERE ' . static::$primaryKey . ' = "' . $pk . '"';

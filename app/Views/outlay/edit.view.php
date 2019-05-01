@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            Dashboard <small>Pay Outlay</small>
+            Dashboard <small>Edit Pay Outlay</small>
         </h1>
         <ol class="breadcrumb">
             <li>
@@ -11,7 +11,7 @@
                 <i class="fa fa-money"></i> Outlay
             </li>
             <li class="active">
-                <i class="fa fa-plus-square"></i> Pay Outlay
+                <i class="fa fa-plus-square"></i> Edit Pay Outlay
             </li>
         </ol>
     </div>

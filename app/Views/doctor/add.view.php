@@ -19,7 +19,8 @@
 <div class="col-md-12">
 
 
-    <form class="form-horizontal" method="POST">
+    <form class="form-horizontal" method="POST" autocomplete="off">
+        <input autocomplete="false" name="hidden" type="text" style="display:none;">
         <div class="form-group">
             <label for="inputEmail3" class="col-sm-2 control-label">Doctor Name</label>
             <div class="col-sm-10">

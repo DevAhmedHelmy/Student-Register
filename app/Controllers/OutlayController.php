@@ -30,16 +30,34 @@ class OutlayController extends AbstractController
         }
         $this->_view();
     }
+    public function editAction()
+    {
+        $id = $this->filterInt($this->_params[0]);
+        $outlay = OutlayModel::getByPK($id);
+        $this->_data['outlay'] = $outlay;
+        $this->_data['students'] = StudentModel::getAll();
+        $this->_view();
+        if (isset($_POST['submit']))
+        {
+
+            $outlay->outlay= $_POST['outlay'];
+            $outlay->student_id = $_POST['student_id'];
+            if ($outlay->save())
+            {
+                $this->redirect('/outlay');
+            }
+        }
+    }
     public function deleteAction()
     {
         $id = $this->filterInt($this->_params[0]);
-        $student = OutlayModel::getByPK($id);
-        if ($student === false)
+        $outlay= OutlayModel::getByPK($id);
+        if ($outlay === false)
         {
             $this->redirect('/outlay');
         }
 
-        if ($student->delete())
+        if ($outlay->delete())
         {
 
             $this->redirect('/outlay');

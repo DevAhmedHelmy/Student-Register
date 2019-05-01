@@ -45,11 +45,13 @@ class DoctorController extends AbstractController
         $this->_data['doctor'] = $doctor;
         if (isset($_POST['submit']))
         {
-            $doctor = new DoctorModel();
             $doctor->name = $this->filterString($_POST['name']);
             $doctor->email = $this->filterEmail($_POST['email']);
             $doctor->degree = $_POST['degree'];
-//            $doctor->password = $_POST['password'];
+            if ((isset($_POST['new_password']) && isset($_POST['confirm_password'])) && ($_POST['new_password'] === $_POST['confirm_password']))
+            {
+                $doctor->password = $_POST['new_password'];
+            }
             $doctor->address = $this->filterString($_POST['address']);
             $doctor->birthDate = $_POST['birth_date'];
             $doctor->phone = $_POST['phone'];

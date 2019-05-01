@@ -38,6 +38,7 @@ class StudentController extends AbstractController
         $this->_view();
     }
     //     edit data
+//
     public function editAction()
     {
 //         to get id
@@ -48,18 +49,19 @@ class StudentController extends AbstractController
             $this->redirect('/student');
         }
         $this->_data['student'] = $student;
-
         if (isset($_POST['submit']))
         {
-            $student = new StudentModel();
+
             $student->name = $this->filterString($_POST['name']);
             $student->email = $this->filterEmail($_POST['email']);
-            $student->password = $_POST['password'];
+//            $student->password = $_POST['password'];
+            if ((isset($_POST['new_password']) && isset($_POST['confirm_password'])) && ($_POST['new_password'] === $_POST['confirm_password']))
+            {
+                $student->password = $_POST['new_password'];
+            }
             $student->address = $this->filterString($_POST['address']);
             $student->birthDate = $_POST['birth_date'];
             $student->phone = $_POST['phone'];
-
-
 
             if ($student->save())
             {

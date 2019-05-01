@@ -18,7 +18,8 @@
 </div>
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <form  method="POST">
+        <form  method="POST" autocomplete="off">
+            <input autocomplete="false" name="hidden" type="text" style="display:none;">
             <div class="form-group">
                 <label>Student Name</label>
                 <input type="text" class="form-control" placeholder="Enter Your Name" name="name" required>

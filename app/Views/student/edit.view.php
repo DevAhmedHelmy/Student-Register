@@ -11,7 +11,7 @@
                 <i class="fa fa-graduation-cap"></i> Students
             </li>
             <li class="active">
-                <i class="fa fa-plus-square"></i> Add New Student
+                <i class="fa fa-plus-square"></i> Edit Student
             </li>
         </ol>
     </div>
@@ -29,10 +29,14 @@
                 <input type="email" class="form-control" placeholder="Enter email" name="email" required
                        value="<?=isset($student) ? $student->email : ''?>">
             </div>
+
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="Password" name="password" required
-                       value="<?=isset($student) ? $student->password : ''?>">
+                <label>New Password</label>
+                <input type="password" class="form-control" placeholder="New Password" name="new_password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password">
             </div>
             <div class="form-group">
                 <label>Address</label>
@@ -49,8 +53,7 @@
                 <input type="text" class="form-control" placeholder="Phone" name="phone" required
                        value="<?=isset($student) ? $student->phone : ''?>">
             </div>
-            <input type="submit" value="Submit" name="submit">
-            <!--            <button type="submit" class="btn btn-primary">Submit</button>-->
+            <input type="submit" value="Submit" name="submit"/>
         </form>
 
     </div>

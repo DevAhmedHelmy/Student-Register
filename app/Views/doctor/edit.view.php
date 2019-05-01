@@ -34,6 +34,18 @@
                        value="<?=isset($doctor) ? $doctor->email : ''?>">
             </div>
         </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">New Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="New Password" name="new_password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Confirm Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password">
+            </div>
+        </div>
 
         <div class="form-group">
             <label for="inputPassword3" class="col-sm-2 control-label">Degree</label>
